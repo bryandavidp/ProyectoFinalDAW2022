@@ -1,6 +1,50 @@
 /* CSS TYPOGRAFÍA */
 /* **************************************************************** */
+@import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
 
 @font-face {
-    
+    font-family: 'Merge One Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Merge One Regular'), url('../font/MergeOne-Regular.woff') format('woff');
+    }
+
+
+*{
+    /* font-family: 'Manjari', sans-serif; */
+    /* font-family:'Merge One Regular'; */
+
+}
+
+.logotipo_tipografia{
+    font-family:'Merge One Regular';
+}
+
+.menu{
+    font-family:'Merge One Regular';
+}
+
+.contenido{
+    font-family: 'Manjari', sans-serif;
+}
+
+.contenido-marketplace{
+    font-family: 'Manjari', sans-serif;
+}
+
+.banner-marketplace > h2{
+color: white;
+text-align: justify;
+font-size: 1.3em;
+padding: 0 15px;
+}
+
+.informacion-producto{
+    font-family: 'Manjari', sans-serif;
+}
+
+
+
+.footer{
+    font-family: 'Manjari', sans-serif;
 }

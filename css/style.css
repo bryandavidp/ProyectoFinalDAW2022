@@ -1,0 +1,470 @@
+/* CSS MODULAR */
+
+@import "normalize.css";
+@import "reset.css";
+
+@import "color.css";
+@import "tipografia.css";
+@import "grid.css";
+@import "layout.css";
+@import "mediaquery.css";
+@import "menu.css";
+
+
+
+/* CSS DEL INDEX:PHP */
+.contenido{
+    background-image: url(../img/fondo3.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: rgb(11 44 103 / 40%);
+    backdrop-filter: blur(5px);
+
+}
+.banner > h1{
+    text-align: center;
+    color: white;
+    padding: 5px 25px;
+    margin: 20px 0 0 0;
+}
+
+.banner > h3{
+    text-align: justify;
+    color: white;
+    padding: 0px 25px;
+    margin: 5px 0 30px 0;
+}
+
+.producto{
+    background-color: rgba(12, 45, 72, 0.5);
+    border-radius: 15px;
+    width: 80%;
+    height: auto;
+    backdrop-filter: blur(5px);
+    box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.producto > img{
+    width: 100%;
+    height: 250px;
+    padding: 15px;
+    object-fit: cover;
+    border-radius: 30px;
+    object-position: center;
+}
+
+.boton_producto{
+    width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #96C3FF;
+        color: white;
+        height: auto;
+        padding: 10px;
+        margin: 0.5em;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+}
+
+.info-producto{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+.info-producto > h2{
+
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Manjari', sans-serif;
+    color: white;
+}
+
+.info-producto > p{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #96C3FF;
+}
+
+
+/* CSS DEL marketplace.PHP */
+
+.contenido-marketplace{
+    background-image: url(../img/fondo3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.banner-marketplace{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: rgb(11 44 103 / 40%);
+    backdrop-filter: blur(5px);
+
+}
+.banner-marketplace > h1{
+    text-align: center;
+    color: white;
+    padding: 5px 25px;
+    margin: 20px 0 0 0;
+}
+
+.banner-marketplace > h3{
+    text-align: justify;
+    color: white;
+    padding: 0px 25px;
+    margin: 5px 0 30px 0;
+}
+
+.productos-marketplace{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    padding: 20px 0 0 0;
+}
+
+.producto-marketplace{
+    background-color: rgba(12, 45, 72, 0.5);
+    border-radius: 15px;
+    width: 80%;
+    height: auto;
+    backdrop-filter: blur(5px);
+    box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.producto-marketplace > img{
+    width: 100%;
+    height: 250px;
+    padding: 15px;
+    object-fit: cover;
+    border-radius: 30px;
+    object-position: center;
+}
+
+.boton_producto{
+    width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #96C3FF;
+        color: white;
+        height: auto;
+        padding: 10px;
+        margin: 0.5em;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+}
+
+.info-producto{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+.info-producto > a{
+
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Manjari', sans-serif;
+    color: white;
+}
+
+.info-producto > p{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #96C3FF;
+}
+
+
+
+/* FOOTER */
+.footer{
+    height: 100px;
+    background-color: #0C2D48;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.info{
+    color: white;
+    font-size: 1.1em;
+    width: 80%;
+    text-align: center;
+
+}
+
+.copy{
+    color: white;
+    font-size: 1em;
+    width: 80%;
+    text-align: center;
+}
+
+
+
+
+
+
+/* CSS PRODUCTO.PHP */
+
+.producto-detalle{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.producto-detalle img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.producto-detalle .info-producto{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #0C2D48;
+    border-radius: 0 0 20px 20px;
+}
+
+.contenido-producto{
+    background-color: #0f395c;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 0px;
+    margin: 0px;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(15px);
+}
+
+.informacion-producto{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.informacion-producto > label{
+    font-size: 1em;
+    color: #f7167f;
+    padding: 20px 10px 0 10px;
+}
+
+.informacion-producto > p{
+    font-size: 1.2em;
+    color: white;
+    padding: 10px 10px;
+    margin: 0;
+    background-color: #222222;
+    vertical-align: middle;
+}
+
+
+
+
+
+/* CSS LOGIN PHP */
+
+.formulario-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    background-color: rgb(67 67 67 / 50%);
+    padding: 20px;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+    backdrop-filter: blur(21px);
+}
+
+.formulario-login > h1{
+    color: white;
+    font-size: 2em;
+    margin: 0 0 60px 0;
+}
+
+.formulario-login > p{
+    color: white;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.campo-formulario{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 20px 0;
+}
+
+.campo-formulario > label{
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.campo-formulario > input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.boton-formulario{
+    margin: 30px 0 0 0;
+}
+
+.boton-formulario input{
+
+    background-color: #f7167f;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 10px -3px black;
+    color: white;
+}
+
+
+.panel-usuario{
+    width: 100vw;
+    position: relative;
+}
+
+.panel-usuario > .cabecera{
+    width: 100vw;
+    height: 30vh;
+    border-bottom: 5px solid white;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.panel-usuario > .perfil{
+    width: 150px;
+    height: 150px;
+    background-image: url(../img/perfil.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100px;
+    position: relative;
+    z-index: 5;
+    top: -75px;
+    margin: 0 auto;
+    border: 5px solid white;
+}
+
+.info-usuario{
+    width: 100vw;
+    height: auto;
+    background-color: #222222;
+    color: white;
+    position: inherit;
+    margin: 0;
+    padding: 0;
+    top: -157px;
+    padding-top: 78px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.menu-panel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    top: -165px;
+    width: 100vw;
+    height: 60px;
+}
+
+.menu-panel > a{
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    background-color: #0c2d48;
+    text-align: center;
+    box-shadow: 0px 0px 10px -5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+}
+
+.colecciones{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    align-content: center;
+    margin-top: -166px;
+}

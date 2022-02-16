@@ -1,5 +1,12 @@
 # plantillaFlexGrid
 
+Titulo de la pagina
+
+Explicacion de la pagina
+
+Captura de pantalla de la pagina
+
+
 ### Plantilla pensada para hacer un Fork
 (Concepto Plantilla/Template)
 
