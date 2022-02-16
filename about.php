@@ -25,7 +25,7 @@
         </div>
 
         <section class="producto">
-          <img src="img/PErfil Discord 512x512.webp" alt="Imagen producto" />
+          <img src="img/product/1.webp" alt="Imagen producto" />
           <div class="info-producto">
             <h2>Título del producto</h2>
             <p>Pedro Sánchez</p>

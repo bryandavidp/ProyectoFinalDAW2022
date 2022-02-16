@@ -16,7 +16,7 @@
       
       <section class="panel-usuario">
       
-        <img src="img/portadas/portada-panel.png" alt="" class="cabecera">
+        <img src="img/portadas/portada-panel.webp" alt="" class="cabecera">
 
         <section class="perfil">
 
