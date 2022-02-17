@@ -17,6 +17,7 @@ include("php/head.php");
 
   <main class="contenido">
         <section class="banner">
+          <section class="banner-desktop">
             <h1>Explora nuestras colecciones</h1>
     
             <h3>
@@ -27,7 +28,7 @@ include("php/head.php");
             <a href="marketplace.php" class="boton_banner">Explorar</a>
             <a href="login.php" class="boton_banner">Iniciar sesión</a>
             </div>
-    
+          </section>
             <section class="producto">
             <img src="img/perfil.webp" alt="Imagen producto" />
             <div class="info-producto">

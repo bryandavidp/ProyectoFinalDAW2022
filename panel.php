@@ -4,18 +4,18 @@
 <?php include("php/head.php"); ?>
 
 
-  <body class="pagina-panel">
+<body class="pagina-panel">
 
   <?php include("php/nav-movil.php"); ?>
 
 
-  
 
-    <main class="contenido">
-      <section class="banner">
-      
+
+  <main class="contenido">
+    <section class="banner">
+
       <section class="panel-usuario">
-      
+
         <img src="img/portadas/portada-panel.webp" alt="" class="cabecera">
 
         <section class="perfil">
@@ -37,72 +37,79 @@
 
         </section>
 
+        <!-- Colecciones de productos, perfil -->
         <section class="colecciones">
 
-        <section class="productos-marketplace">
-        <section class="producto-marketplace">
-          <img src="img/product/1.webp" alt="Imagen producto" />
-          <div class="info-producto">
-            <a href="./producto.php">BigHeadBunnie#1932</a>
-            <p>Bryandavidp</p>
-          </div>
+          <section class="productos-marketplace">
+            <section class="producto-marketplace">
+              <img src="img/product/1.webp" alt="Imagen producto" />
+              <div class="info-producto">
+                <a href="./producto.php">BigHeadBunnie#1932</a>
+                <p>Bryandavidp</p>
+              </div>
+            </section>
+
+            <section class="producto-marketplace">
+              <img src="img/product/2.webp" alt="Imagen producto" />
+              <div class="info-producto">
+                <a href="producto.php">BigHeadBunnie#1932</a>
+                <p>Bryandavidp</p>
+              </div>
+            </section>
+
+            <section class="producto-marketplace">
+              <img src="img/product/3.webp" alt="Imagen producto" />
+              <div class="info-producto">
+                <a href="producto.php">BigHeadBunnie#1932</a>
+                <p>Bryandavidp</p>
+              </div>
+            </section>
+
+            <section class="producto-marketplace">
+              <img src="img/product/2.webp" alt="Imagen producto" />
+              <div class="info-producto">
+                <a href="producto.php">BigHeadBunnie#1932</a>
+                <p>Bryandavidp</p>
+              </div>
+            </section>
+
+            <section class="producto-marketplace">
+              <img src="img/product/3.webp" alt="Imagen producto" />
+              <div class="info-producto">
+                <a href="producto.php">BigHeadBunnie#1932</a>
+                <p>Bryandavidp</p>
+              </div>
+            </section>
+
+            <section class="producto-marketplace">
+              <img src="img/product/4.webp" alt="Imagen producto" />
+              <div class="info-producto">
+                <a href="producto.php">BigHeadBunnie#1932</a>
+                <p>Bryandavidp</p>
+              </div>
+            </section>
+
+          </section>
+
         </section>
 
-        <section class="producto-marketplace">
-          <img src="img/product/2.webp" alt="Imagen producto" />
-          <div class="info-producto">
-            <a href="producto.php">BigHeadBunnie#1932</a>
-            <p>Bryandavidp</p>
-          </div>
-        </section>
-
-        <section class="producto-marketplace">
-          <img src="img/product/3.webp" alt="Imagen producto" />
-          <div class="info-producto">
-           <a href="producto.php">BigHeadBunnie#1932</a>
-            <p>Bryandavidp</p>
-          </div>
-        </section>
-
-        <section class="producto-marketplace">
-          <img src="img/product/2.webp" alt="Imagen producto" />
-          <div class="info-producto">
-            <a href="producto.php">BigHeadBunnie#1932</a>
-            <p>Bryandavidp</p>
-          </div>
-        </section>
-
-        <section class="producto-marketplace">
-          <img src="img/product/3.webp" alt="Imagen producto" />
-          <div class="info-producto">
-            <a href="producto.php">BigHeadBunnie#1932</a>
-            <p>Bryandavidp</p>
-          </div>
-        </section>
-
-        <section class="producto-marketplace">
-          <img src="img/product/4.webp" alt="Imagen producto" />
-          <div class="info-producto">
-            <a href="producto.php">BigHeadBunnie#1932</a>
-            <p>Bryandavidp</p>
-          </div>
-        </section>
 
       </section>
 
-        </section>
 
-      </section>
-      
+    </section>
 
 
-      </section>
-    </main>
+    
 
+  </main>
 
 
 
-    <?php include("php/footer.php"); ?>
 
-  </body>
+
+  <?php include("php/footer.php"); ?>
+
+</body>
+
 </html>

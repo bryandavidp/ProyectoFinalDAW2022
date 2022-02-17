@@ -10,9 +10,10 @@
     }
 
 
-*{
+*, a{
     /* font-family: 'Manjari', sans-serif; */
-    /* font-family:'Merge One Regular'; */
+     font-family:'Merge One Regular';
+     color: white;
 
 }
 

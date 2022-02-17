@@ -13,6 +13,8 @@
 
 
 /* CSS DEL INDEX:PHP */
+
+/* Las clases .contenido-x son las clases base, es donde ponemos el fondo del contenido de la web */
 .contenido{
     background-image: url(../img/fondo3.webp);
     background-repeat: no-repeat;
@@ -21,20 +23,21 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-    height: auto;
+    height: 90vh;
 }
-
+/* Las clases .banner-x son las clases que gestionan el flex y los tamaños del contenido de la seccion, tambien gestionamos el blur */
 .banner{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    height: auto;
+    height: 90vh;
     background-color: rgb(11 44 103 / 40%);
     backdrop-filter: blur(5px);
 
 }
+
 .banner > h1{
     text-align: center;
     color: white;
@@ -116,7 +119,7 @@
 /* CSS DEL marketplace.PHP */
 
 .contenido-marketplace{
-    background-image: url(../img/fondo3.jpg);
+    background-image: url(../img/fondo3.webp);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -399,6 +402,7 @@
 
 .panel-usuario{
     width: 100vw;
+    height: 91vh;
     position: relative;
 }
 

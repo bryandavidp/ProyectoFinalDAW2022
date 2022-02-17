@@ -32,7 +32,7 @@
           <section class="rrss">
             <span
               class="iconify"
-              data-icon="logos:twitter"
+              data-icon="akar-icons:twitter-fill"
               style="color: white"
               data-width="50"
               data-height="50"
@@ -46,19 +46,37 @@
             ></span>
             <span
               class="iconify"
-              data-icon="logos:discord-icon"
+              data-icon="akar-icons:discord-fill"
               style="color: white"
               data-width="50"
               data-height="50"
             ></span>
             <span
               class="iconify"
-              data-icon="logos:youtube-icon"
+              data-icon="akar-icons:youtube-fill"
               style="color: white"
               data-width="50"
               data-height="50"
             ></span>
           </section>
         </ul>
+
+        <ul class="menu-desktop">
+          <li>
+            <a href="index.php">Inicio</a>
+          </li>
+          <li>
+            <a href="marketplace.php">Marketplace</a>
+          </li>
+          <li>
+            <a href="about.php">¿Quienes somos?</a>
+          </li>
+          <li>
+            <a href="contacto.php">Contacto</a>
+          </li>
+          <li><a href="login.php" class="boton_login_desktop">Iniciar sesión</a></li>
+        </ul>
+
+
       </nav>
     </header>
