@@ -23,7 +23,7 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-    height: 90vh;
+    height: auto;
 }
 /* Las clases .banner-x son las clases que gestionan el flex y los tamaños del contenido de la seccion, tambien gestionamos el blur */
 .banner{
@@ -32,7 +32,7 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    height: 90vh;
+    height: auto;
     background-color: rgb(11 44 103 / 40%);
     backdrop-filter: blur(5px);
 
@@ -262,7 +262,7 @@
 
 .producto-detalle{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -382,6 +382,7 @@
     border: 1px solid white;
     padding: 5px;
     margin: 5px;
+    color: black;
 }
 
 .boton-formulario{
@@ -400,15 +401,50 @@
 }
 
 
+/* FORMULARIO DE REGISTRO */
+
+.formulario-registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    background-color: rgb(67 67 67 / 50%);
+    padding: 20px;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+    backdrop-filter: blur(21px);
+}
+
+.formulario-registro > h1{
+    color: white;
+    font-size: 2em;
+    margin: 0 0 60px 0;
+}
+
+.formulario-registro > p{
+    color: white;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.formulario-registro > p > a{
+
+    color: #f7167f;
+}
+
+
 .panel-usuario{
     width: 100vw;
-    height: 91vh;
+    height: auto;
     position: relative;
 }
 
 .panel-usuario > .cabecera{
     width: 100vw;
-    height: 30vh;
+    height: 20%;
     border-bottom: 5px solid white;
     background-size: cover;
     background-position: center;
@@ -477,4 +513,26 @@
     width: 100vw;
     align-content: center;
     margin-top: -166px;
+}
+
+.formulario-login .campo-formulario .error__formulario{
+    background-color: rgb(255, 183, 183);
+    border: 1px solid red;
+}
+
+.formulario-registro .campo-formulario .error__formulario{
+    background-color: rgb(255, 183, 183);
+    border: 1px solid red;
+}
+
+.campo-formulario .error__formulario__mensaje{
+    color: red;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.d-none{
+    display: none;
 }

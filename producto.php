@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<?php include("php/head.php"); ?>
+<?php 
+$paginaActual = "Producto #X";
+include("php/head.php"); ?>
 
 
   <body class="pagina-producto">

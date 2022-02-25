@@ -9,5 +9,6 @@
             </p>
         </div>
         <link rel="stylesheet" href="css/style.css">
+        <script src="js/validar-formularios.js" ></script>
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     </footer>

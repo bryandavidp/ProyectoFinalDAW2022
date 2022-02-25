@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<?php include("php/head.php"); ?>
+<?php 
+$paginaActual = "Marketplace";
+include("php/head.php"); ?>
 
 
 <body class="marketplace">
