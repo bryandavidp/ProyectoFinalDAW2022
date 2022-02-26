@@ -180,7 +180,6 @@ function validarFormularioRegistro() {
   var terminos = document.querySelector("#terminos-reg").value;
 
   var usuarioSpan = document.querySelector("#usuario-reg + p").value;
-  alert(usuarioSpan);
 
   // Vamos a recorrer un foreach para comprobar que los campos no estén vacíos
   var campos = [
