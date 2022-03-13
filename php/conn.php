@@ -4,7 +4,7 @@
 $db = [
     'host' => 'localhost:8889',
     'username' => 'root',
-    'password' => '',
+    'password' => 'root',
     'db' => 'OpenUniverse'
 ];
 
