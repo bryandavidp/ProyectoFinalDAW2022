@@ -238,8 +238,8 @@ function validarFormularioRegistro() {
 
 // funcion para agregar las clases error del input usuario
 function errorUsuarioRegVacio() {
-  document.getElementById("usuario-reg").classList.add("error__formulario");
-  document.querySelector("#usuario-reg + p").classList.add("error__formulario__mensaje");
+  document.getElementById("username").classList.add("error__formulario");
+  document.querySelector("#username + p").classList.add("error__formulario__mensaje");
   return;
 }
 

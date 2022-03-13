@@ -444,7 +444,7 @@
 
 .panel-usuario > .cabecera{
     width: 100vw;
-    height: 20%;
+    height: 200px;
     border-bottom: 5px solid white;
     background-size: cover;
     background-position: center;
@@ -536,3 +536,29 @@
 .d-none{
     display: none;
 }
+
+
+
+
+/* ====================================== */
+/* CSS PARA EL HEADER                     */
+/* ====================================== */
+
+.boton__cerrarSesion{
+    color: white;
+    font-size: inherit;
+    background-color: rgb(145, 0, 0);
+    border: 1px solid rgb(190, 4, 4);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.boton__login{
+    color: white;
+    font-size: inherit;
+    background-color: #f7167f;
+    border: 1px solid #f3559f;
+    border-radius: 5px;
+    padding: 10px;
+}
+

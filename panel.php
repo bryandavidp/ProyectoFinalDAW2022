@@ -1,9 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <?php 
+
+// Definimos las vairbles necesarias y los includes externos
 $paginaActual = "Perfil de usuario";
-include("php/head.php"); ?>
+include ('php/conn.php');
+include ('php/funciones.php');
+include("php/head.php"); 
+
+// Iniciamos la sesión 
+session_start();
+
+//Comprobamos que el usuario está logueado comprobando la sesion Username tiene algo
+if (isset($_SESSION['Username'])) {
+
+  $usuario = $_SESSION['Username'];
+  $nombre = $_SESSION['Nombre'];
+  $apellido = $_SESSION['Apellidos'];
+  $email = $_SESSION['Email'];
+  $fecha = formatearFecha($_SESSION['fechaRegistro']);
+
+
+?>
 
 
 <body class="pagina-panel">
@@ -23,12 +43,18 @@ include("php/head.php"); ?>
         <section class="perfil">
 
         </section>
-        <!-- <img src="img/product/3.webp" alt="" class="perfil">
- -->
+        <!-- <img src="img/product/3.webp" alt="" class="perfil"> -->
 
         <section class="info-usuario">
-          <h2>Bryandavidp</h2>
-          <p>Se unió en Enero de 2022</p>
+          <h2><b> <?php echo ucfirst($usuario); ?></b></h2>
+          <p>Se unió el <?php echo $fecha; ?></p>
+          <hr>
+          <p><b>Nombre completo:</b>   <?php echo ucfirst($nombre) . " " . ucfirst($apellido); ?></p>
+          <p><b>Email:</b>  <?php echo $email; ?></p>
+
+          <!-- Boton modificar perfil -->
+          <a href="modificarPerfil.php" class="btn-modificar">Modificar perfil</a>
+
         </section>
 
         <section class="menu-panel">
@@ -47,7 +73,7 @@ include("php/head.php"); ?>
               <img src="img/product/1.webp" alt="Imagen producto" />
               <div class="info-producto">
                 <a href="./producto.php">BigHeadBunnie#1932</a>
-                <p>Bryandavidp</p>
+                <p><?php echo $usuario; ?></p>
               </div>
             </section>
 
@@ -55,7 +81,7 @@ include("php/head.php"); ?>
               <img src="img/product/2.webp" alt="Imagen producto" />
               <div class="info-producto">
                 <a href="producto.php">BigHeadBunnie#1932</a>
-                <p>Bryandavidp</p>
+                <p><?php echo $usuario; ?></p>
               </div>
             </section>
 
@@ -63,7 +89,7 @@ include("php/head.php"); ?>
               <img src="img/product/3.webp" alt="Imagen producto" />
               <div class="info-producto">
                 <a href="producto.php">BigHeadBunnie#1932</a>
-                <p>Bryandavidp</p>
+                <p><?php echo $usuario; ?></p>
               </div>
             </section>
 
@@ -115,3 +141,12 @@ include("php/head.php"); ?>
 </body>
 
 </html>
+
+<?php
+
+
+} else {
+  header("Location: ../login.php");
+}
+
+?>

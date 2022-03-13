@@ -3,13 +3,25 @@
 
 <?php
 $paginaActual = "Iniciar sesión";
-include("php/head.php"); ?>
+include("php/head.php"); 
+session_start();
+
+
+
+if (isset($_SESSION['Username'])) {
+    header("Location: panel.php");
+} else {
+
+  $errores = $_SESSION['error_login'];
+
+?>
 
 
 <body class="pagina-login">
 
   <?php include("php/nav-movil.php"); ?>
 
+  
 
 
 
@@ -17,9 +29,19 @@ include("php/head.php"); ?>
     <section class="banner">
 
       <!-- Hacemos un formulario de inicio de sesión -->
-      <form action="panel.php" method="post" class="formulario-login" id="formulario-login">
+      <form method="post" class="formulario-login" id="formulario-login" action="php/compLogin.php">
 
         <h1>Iniciar sesión</h1>
+
+        <?php 
+      //Mostramos por pantalla los errores obtenidos por el array $errores
+      
+      if (isset($errores)){
+        mostrarErrores($errores); 
+      } 
+      
+      
+      ?>
 
         <div class="campo-formulario">
           <label for="usuario">Usuario</label>
@@ -54,3 +76,10 @@ include("php/head.php"); ?>
 </body>
 
 </html>
+
+<?php
+
+// Cierre del IF de comprobacion de sesión
+  } 
+
+?>
