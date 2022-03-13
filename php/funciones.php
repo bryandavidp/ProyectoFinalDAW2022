@@ -38,7 +38,8 @@ function registrarUsuario($conn, $usuario, $nombre, $apellidos, $email, $passwor
     $stmt->execute();
     return true;
     } catch (PDOException $e) {
-        return "Error: " . $e->getMessage();
+        echo "Error: " . $e->getMessage();
+        return false;
     }
 
 }
@@ -93,7 +94,6 @@ function normalizeInput($input){
 
     foreach ($input as $key => $value) {
         // to do: controlar el tipo de dato a limpiar ?
-        $input[$key] = trim($value);
         $input[$key] = stripslashes($value);
         $input[$key] = htmlspecialchars($value);
         $input[$key] = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW);

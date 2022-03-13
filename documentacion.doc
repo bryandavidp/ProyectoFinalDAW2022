@@ -1,0 +1,184 @@
+
+Indice
+
+1.Introduccion
+2.Instalacion del proyecto con xampp
+5.Archivo de funciones php
+6.Archivos php de contenido dinamico
+7.Archivos php de comprobacion de datos
+8.Archivos php de formularios
+
+1.Introduccion
+
+Este proyecto es una página web de compra venta de NFTs. Hasta el punto que está hecha solo
+tenemos vamos a tener los usuarios, los productos los añadiremos más adelante en el proceso.
+
+La página web nos permite registrar usuarios, iniciar sesión con su usuario y contraseña,
+modificar su propio perfil y "ver los productos que ha comprado", por ahora son solo placeholders.
+
+2. Instalacion del proyecto con Xampp (MAMP)
+
+Ya que yo trabajo en MacOs voy a utilizar MAMP para realizar el proceso, pero es exactamente igual que en windows Xampp.
+
+Pasos a seguir:
+
+    1. Iniciar MAMP
+    2. Ir a la carpeta htdocs de MAMP y poner dentro la carpeta del proyecto
+    3. Ahora en el navegador vamos a localhost/phpmyadmin
+    4. Ahora vamos a crear una base de datos llamada "OpenUniverse"
+    5. Ahora vamos al apartado Importar y simplmente arrastramos el archivo .SQL a la ventana
+
+Ahora ya tenemos el proyecto configurado y listo para funcionar.
+El siguiente paso es registrarse como nuevo usuario y empezar a probar.
+
+2. Archivo de funciones php
+
+Este archivo contiene todas las funciones que vamos a necesitar para el proyecto,
+desde conexiones hasta validaciones.
+
+A continuación explico lo que hace cada una de ellas:
+
+function login($conn, $username, $password)
+    Esta función nos permite iniciar sesión con el usuario y contraseña que nosotros le pasemos.
+    Esta funcion tambien encripta la contraseña antes de compararla.
+    Si el usuario y contraseña son correctos nos devolverá un true, si no, un false.
+
+function registrarUsuario($conn, $usuario, $nombre, $apellidos, $email, $password)
+    Esta función nos permite registrar un nuevo usuario en la base de datos.
+    Si el usuario no existe, nos devolverá un true, si no, un false.
+
+function comprobarPassword($password, $password2)
+    Esta función nos permite comprobar que la contraseña que nosotros le pasemos es correcta, es decir,
+    que coinciden entre ellas.
+    Si es correcta nos devolverá un true, si no, un false.
+
+function comprobarUsuarioExistente($conn, $usuario)
+    Esta función nos permite comprobar que el usuario que nosotros le pasemos existe en la base de datos.
+    Si existe nos devolverá un true, si no, un false.
+
+function comprobarEmailExistente($conn, $email)
+    Esta función nos permite comprobar que el email que nosotros le pasemos existe en la base de datos.
+    Si existe nos devolverá un true, si no, un false.
+
+function normalizeInput($input)
+    Esta función nos permite normalizar los datos que nosotros le pasemos, es decir,
+    eliminar espacios en blanco, saltos de línea, etc.
+    Nos devolverá el input normalizado.
+
+function comprobarTerminos($terminos)
+    Esta función nos permite comprobar que el usuario ha aceptado los términos y condiciones.
+    Si ha aceptado nos devolverá un true, si no, un false.
+
+function mostrarErrores($errores)
+    Esta función nos permite mostrar los errores que nos devuelve el programa.
+    Nos devolverá una cadena de texto con los errores.
+
+function normalizarUsuario
+    Esta función nos permite normalizar el usuario que nosotros le pasemos, es decir,
+    eliminar espacios en blanco, etc.
+    Nos devolverá el usuario normalizado.
+
+function normalizarStrings($string)
+    Esta función nos permite normalizar los strings que nosotros le pasemos, es decir,
+    eliminar espacios en blanco, saltos de línea, etc.
+    Nos devolverá el string normalizado.
+
+function eliminarUsuario($conn, $usuario)
+    Esta función nos permite eliminar un usuario de la base de datos.
+    No esta implementado en la web, pero funciona.
+    Si se ha eliminado correctamente nos devolverá un true, si no, un error.
+
+function formatearFecha($fecha)
+    Esta función nos permite formatear la fecha que nosotros le pasemos a un formato
+    más legible para el usuario.
+    Nos devolverá la fecha formateada.
+
+function cerrarSesion()
+    Esta función nos permite cerrar la sesión del usuario.
+    Se encarga de destruir la sesion que haya creada.
+
+function botonCerrarSesion()
+    Esta función nos permite mostrar el botón de cerrar sesión.
+    Solo se activa en los headers si hay una sesion iniciada.
+    Nos devolverá una cadena de texto con el botón de cerrar sesión.
+
+function modificarPerfil($conn, $data)
+    Esta función nos permite modificar el perfil del usuario.
+    Si se ha modificado correctamente nos devolverá un true, si no, un error.
+
+3. Archivos PHP de contenido dinámico
+
+Estos archivos contienen todos sus elementos respectivos para
+poder llamarlos en la web cuando sea necesario con un include.
+
+    head.php --> Contiene el encabezado de la web, incluye el css y el javascript.
+    nav-movil.php --> Este es el menú de la web.
+    footer.php --> Este es el pie de la web.
+
+4. Archivos de comprobacion php
+
+    4.1 compLogin.php 
+    Esta es la página que recibe todos los datos $_POST del login.
+    Llamando luego a la funcion login para comprobar si es correcta, en caso afirmativo,
+    destruimos las sesiones que puedan existir y con un foreach asignamos 
+    los datos del usuario a la sesion.
+    Despues redirigimos a la página de usuario.
+
+    4.2 compRegistro.php
+    Esta es la página que recibe todos los datos $_POST del registro.
+    Funciona igual que la de login, pero comprobando todos los datos del registro
+    y limpianddolos antes de operarlos.
+    Luego comprueba los errores de si el usuario ya existe, las contraseñas coinciden
+    o el email ya está registrado.
+
+    En caso de no haber errores nos redirige a la pagina de login para poder iniciar 
+    sesion con nuestro nuevo usuario.
+
+    4.3 compModificaciones.php
+    Esta es la página que recibe todos los datos $_POST de modificarPerfil.php
+    Funciona igual que las dos anteriores, limpiando caracteres y demás.
+    
+    Aqui lo diferente está en que utilizamos un foreach para recorrer el $_POST
+    en busca de datos con informacion para poder pasar solo ls campos que estén rellenos a la 
+    base de datos y que solo cambie los datos necesarios y no todos ellos.
+
+    Tenemos una secuencia de ifs que nos hacen todas las validaciones necesarias y nos devuelve error
+    en caso de no haber pasado alguna. Cuando todo está OK se modifican los datos en la 
+    base de datos y se redirige al usuario a la pagina de login para que vuelva a iniciar sesion.
+
+    4.4 php/logout.php
+    Esta es la página que se encarga de cerrar la sesion del usuario.
+
+5. Archivos php de formularios
+
+    5.1 login.php
+    Esta es la página que muestra el formulario de login.
+
+    5.2 registro.php
+    Esta es la página que muestra el formulario de registro.
+
+    5.3 modificarPerfil.php
+    Esta es la página que muestra el formulario de modificar perfil.
+
+6. Panel de usuario
+
+En este apartado podremos ver los datos del usuario, los productos que tiene,
+además podremos desde aqui modificar los datos de nuestro usuario a voluntad.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

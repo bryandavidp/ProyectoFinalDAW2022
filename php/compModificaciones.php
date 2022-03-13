@@ -1,11 +1,9 @@
 <?php
 session_start();
 
-$_SESSION['ID'] = 1;
-
 if (isset($_SESSION['ID'])) {
 
-
+// inclusion de archivos importantes
 include ("conn.php");
 include ("funciones.php");
 

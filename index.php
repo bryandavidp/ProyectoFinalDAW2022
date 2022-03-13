@@ -3,6 +3,7 @@
 
 <?php
 $paginaActual = "Inicio";
+session_start();
 
 include("php/head.php"); 
 ?>
@@ -26,7 +27,9 @@ include("php/head.php");
     
             <div class="botones-banner">
             <a href="marketplace.php" class="boton_banner">Explorar</a>
+            <?php if (!isset($_SESSION['Username'])) { ?>
             <a href="login.php" class="boton_banner">Iniciar sesión</a>
+            <?php } ?>
             </div>
           </section>
             <section class="producto">

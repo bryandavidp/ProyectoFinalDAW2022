@@ -614,3 +614,13 @@
     box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
     backdrop-filter: blur(21px);
 }
+
+.btn-modificar{
+    color: white;
+    font-size: inherit;
+    background-color: #f7167f;
+    border: 1px solid #f3559f;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px;
+}

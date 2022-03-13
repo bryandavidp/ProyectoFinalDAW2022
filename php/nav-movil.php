@@ -34,9 +34,7 @@
         <li>
           <a href="php/logout.php">Cerrar sesión</a>
         </li>
-      <?php } else {
-        session_destroy();
-      ?>
+      <?php } else {  ?>
         <li>
           <a href="login.php">Iniciar sesión</a>
         </li>

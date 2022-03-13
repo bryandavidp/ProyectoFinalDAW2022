@@ -2,7 +2,7 @@
 
 // Vamos a crear la conexión por defecto de la base de datos
 $db = [
-    'host' => 'localhost:8889',
+    'host' => 'localhost',
     'username' => 'root',
     'password' => 'root',
     'db' => 'OpenUniverse'
