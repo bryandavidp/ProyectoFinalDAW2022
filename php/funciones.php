@@ -24,6 +24,7 @@ function login($conn, $username, $password)
     }
 }
 
+// Funcion para registrar usuarios
 function registrarUsuario($conn, $usuario, $nombre, $apellidos, $email, $password){
 
     try{
@@ -42,6 +43,7 @@ function registrarUsuario($conn, $usuario, $nombre, $apellidos, $email, $passwor
 
 }
 
+// esta función comprueba que las contraseñas sean iguales
 function comprobarPassword($password, $password2){
 
     if ($password != $password2) {
@@ -52,6 +54,7 @@ function comprobarPassword($password, $password2){
 
 }
 
+// Comprueba si el usuario que le pasamos existe
 function comprobarUsuarioExiste($conn, $usuario){
 
     $sql = "SELECT * FROM Users WHERE Username = :username";
@@ -68,6 +71,7 @@ function comprobarUsuarioExiste($conn, $usuario){
 
 }
 
+// comprueba si el email que le pasamos existe
 function comprobarEmailExiste($conn, $email){
 
     $sql = "SELECT * FROM Users WHERE Email = :email";
@@ -84,7 +88,7 @@ function comprobarEmailExiste($conn, $email){
 
 }
 
-// FUNCION DE PRUEBA PARA NORMALIZAR LAS PETICIONES POST
+// FUNCION PARA NORMALIZAR LAS PETICIONES POST
 function normalizeInput($input){
 
     foreach ($input as $key => $value) {
@@ -92,7 +96,7 @@ function normalizeInput($input){
         $input[$key] = trim($value);
         $input[$key] = stripslashes($value);
         $input[$key] = htmlspecialchars($value);
-        $input[$key] = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
+        $input[$key] = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW);
         $input[$key] = filter_var($value, FILTER_SANITIZE_EMAIL);
        
 
@@ -104,6 +108,7 @@ function normalizeInput($input){
     return $input;
 }
 
+// Funcion para comprobar que los terminos están aceptados
 function comprobarTerminos($terminos){
 
     if ($terminos != "on") {
@@ -113,9 +118,6 @@ function comprobarTerminos($terminos){
     }
 
 }
-
-
-function comprobarContraseña(){}
 
 function mostrarErrores($errores){
 
@@ -137,6 +139,7 @@ function normalizarUsuario($username)
     return $username;
 }
 
+// Funcion para normalizar los Strings, quitando espacios en blanco, etc
 function normalizarStrings($string)
 {
     $string = stripslashes($string);
@@ -147,24 +150,8 @@ function normalizarStrings($string)
     return $string;
 }
 
-function modificarUsuario($conn, $usuario, $nombre, $apellidos, $email, $password){
-
-    try{
-        $sql = "UPDATE Users SET Nombre = :nombre, Apellidos = :apellidos, Email = :email, Password = :password WHERE Username = :username";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':username', $usuario);
-    $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':apellidos', $apellidos);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $password);
-    $stmt->execute();
-    return true;
-    } catch (PDOException $e) {
-        return "Error: " . $e->getMessage();
-    }
-
-}
-
+// Funcion para eliminar un usuario de la base de datos 
+// NO ESTÁ EN USO ACTUALMENTE, pero funciona.
 function eliminarUsuario($conn, $usuario, $password){
     
         try{
@@ -180,19 +167,21 @@ function eliminarUsuario($conn, $usuario, $password){
     
 }
 
+// Funcion para formatear la fecha de forma más legible
 function formatearFecha($fecha){
     $fecha = date('d-m-Y', strtotime($fecha));
     return $fecha;
 }
 
 
-
+// Funcion para cerrar sesion, destruyendola.
 function cerrarSesion(){
     session_start();
     session_destroy();
     header('Location: ../login.php');
 }
 
+// Funcion para mostrar el boton de cerrar sesion
 function botonCerrarSesion(){
     echo '<a href="php/cerrarSesion.php" class="boton-panel">Cerrar sesión</a>';
 
@@ -204,7 +193,7 @@ function botonCerrarSesion(){
 /* ============================================= */
 
 
-
+// Funcion para modificar el perfil del usuario
 function modificarPerfil($conn, $data)
     {
         try 

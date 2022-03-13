@@ -5,7 +5,6 @@ $_SESSION['ID'] = 1;
 
 if (isset($_SESSION['ID'])) {
 
-var_dump($_POST);
 
 include ("conn.php");
 include ("funciones.php");
@@ -26,6 +25,14 @@ $_POST = normalizeInput($_POST);
 // y no desea que se cambie nada más, así lo conseguimos.
 /* ========================================================================= */
 
+
+foreach ($_POST as $key => $value) {
+    if($_POST[$key] == ""){
+        unset($_POST[$key]);
+    }
+}
+
+
 // Para el usuario
 if (isset($_POST['Username'])) {
     $_POST['Username'] = normalizarUsuario($_POST['Username']);
@@ -36,15 +43,20 @@ if (isset($_POST['Username'])) {
     }
 } 
 
+
 // Para la contraseña
-if (isset($_POST['Password']) && isset($_POST['password2'])) {
+if (isset($_POST['password']) && isset($_POST['password2'])) {
+
+    var_dump($_POST['password']);
+    var_dump($_POST['password2']);
    
     // Comprobamos que las contraseñas sean iguales
-    if(comprobarPassword($_POST['Password'], $_POST['password2']) == false){
-        $errores['password'] = "Las contraseñas no coinciden";
+    if(comprobarPassword($_POST['password'], $_POST['password2']) == false){
+        $errores['Password'] = "Las contraseñas no coinciden";
+        echo "Las contraseñas no coinciden";
     }
 
-    $_POST['Password'] = md5($_POST['Password']);
+    $_POST['password'] = md5($_POST['password']);
 
 
 } 
@@ -78,11 +90,6 @@ if (isset($_POST['Terminos'])) {
     $_POST['Terminos'] = comprobarTerminos($_POST['Terminos']);
 }
 
-foreach ($_POST as $key => $value) {
-    if($_POST[$key] == ""){
-        unset($_POST[$key]);
-    }
-}
 
 
 // Si hay algun parametro que no debe ser enviado a la BBDD debemos unsettearlo
@@ -97,16 +104,12 @@ unset($_POST['password2']);
 
 if (isset($errores) && count($errores) > 0) {
     $_SESSION['errores'] = $errores;
-    // Mostrar errores 
-    foreach ($_SESSION['errores'] as $key => $value) {
-        echo "<p class='$key'>$value</p>";
-    }
     header("Location: ../modificarPerfil.php");
 } else {
 
     if(modificarPerfil($conn, $_POST) == true){
-        $_SESSION['modificaciones'] = "¡Tus datos se han actualizado correctamente!";
-        //header("Location: ../login.php");
+        session_destroy();
+        header("Location: ../login.php?mod=true");
     } else {
         $error['mensaje'] = "No se han podido modificar los datos en la BBDD.";
         $_SESSION['error'] = $error;

@@ -33,6 +33,9 @@ $conn = connect($db);
 
   } else {
         // Si no existe el usuario, mostramos un error
-        $_SESSION['error_login'] = "Usuario o contraseña incorrectos.";
-        header("Location: ../login.php");
+        $errores = "Este usuario no está registrado.";
+        header("Location: ../login.php?errores=".$errores);
   }
+
+
+?>

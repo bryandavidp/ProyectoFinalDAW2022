@@ -4,9 +4,12 @@
 <?php
 session_start();
 
+// Impedimos el acceso si no estás logueado
+if (isset($_SESSION['Username'])) {
+   
 $errores = $_SESSION['errores'];
 
-$mensaje = "No es necesario rellenar todos los campos para modificalos.";
+$mensaje = "No es necesario rellenar todos los campos para modificarlos.";
 $paginaActual = "Modificar Perfil";
 include("php/head.php");
 include("php/funciones.php");
@@ -72,7 +75,7 @@ include("php/funciones.php");
 
                 <div class="campo-formulario">
                     <label for="password">Contraseña</label>
-                    <input type="password" name="password" id="password-reg" placeholder="Nueva contraseña" autocomplete="current-password">
+                    <input type="password" name="Password" id="password-reg" placeholder="Nueva contraseña" autocomplete="current-password">
                  
                 </div>
 
@@ -102,3 +105,8 @@ include("php/funciones.php");
 </body>
 
 </html>
+
+<?php
+} else {
+    header("Location: login.php");
+}

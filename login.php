@@ -3,16 +3,27 @@
 
 <?php
 $paginaActual = "Iniciar sesión";
-include("php/head.php"); 
+include("php/head.php");
+include("php/funciones.php");
+
 session_start();
 
+if (isset($_GET['errores'])) {
+  $errores['error'] = $_GET['errores'];
+}
+
+if (isset($_GET['mod'])) {
+  $_SESSION['modificaciones'] = "¡Tus datos se han actualizado correctamente!";
+  $mensaje = $_SESSION['modificaciones'];
+}
 
 
 if (isset($_SESSION['Username'])) {
     header("Location: panel.php");
 } else {
 
-  $errores = $_SESSION['error_login'];
+  
+  var_dump($errores);
 
 ?>
 
@@ -39,6 +50,10 @@ if (isset($_SESSION['Username'])) {
       if (isset($errores)){
         mostrarErrores($errores); 
       } 
+
+      if (isset($mensaje)) {
+        echo "<p class='login--info'>$mensaje</p>";
+      }
       
       
       ?>

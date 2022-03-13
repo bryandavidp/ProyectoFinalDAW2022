@@ -53,11 +53,11 @@ if (isset($errores) && count($errores) > 0) {
 
     if(registrarUsuario($conn, $usuario, $nombre, $apellidos, $email, $password) == true){
         $_SESSION['registrado'] = true;
-        header("Location: ../login.php");
+        header("Location: ../login.php?reg=true");
     } else {
         $error['mensaje'] = "No se ha podido registrar el usuario en la BBDD.";
         $_SESSION['error'] = $error;
-        header("Location: ../registro.php");
+        header("Location: ../registro.php?reg=false");
     }
 }
 
